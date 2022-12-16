@@ -1,0 +1,56 @@
+whoami
+ls
+mkdir
+touch
+nano
+pwd  print wokring directory
+hostname
+ssh -X sliao@shire.bmt.tue.nl
+ls -lh
+ls -lah
+du -sh */filename  (return the file size)
+ls -lh *
+du -sh * | sort -hr
+ls -lh *first* (work on part of name)
+cp -r
+scp -r
+rm -r
+cat /more
+Ctrl-C (KeyboardInterrupt)
+Ctrl-\\ (stop script with multiple threads)
+python -i file.py (interactive mode)
+Ctrl-D (quit any prompt)
+Ctrl-Z (pause running of a script)
+fg (continue a script)nvtop
+nvtop
+
+export CUDA_VISIBLE_DEVICES=1
+echo $CUDA_VISIBLE_DEVICES
+\CUDA_VISIBLE_DEVICES=1 python -i script.py
+
+tmux\tmux new-session -s new
+Ctrl-B D
+Ctrl-B X
+tmux a -t seesionname
+tmux kill-session -t sessionname
+tmux ls
+pkill -f tmux
+
+chmod u+x list_home.sh
+./list_home.sh
+
+echo $PATH
+export PATH="/home/amalia/scripts:$PATH"
+
+man ls
+nvtop
+grep import my_clock.py > test.txt (globally search a regular expression and print)
+
+pytest -W ignore::DeprecationWarning
+
+rclone copy -P "sliao_drive:MS" /mnt/alpha/diabetes/MS --ignore-existing
+
+CUDA_VISIBLE_DEVICES=1 python train_multi.py
+
+ nvidia-smi 
+

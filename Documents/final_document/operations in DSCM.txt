@@ -1,0 +1,49 @@
+from deepscm.morphomnist.morpho import ImageMoments, ImageMorphology, bounding_parallelogram
+from deepscm.morphomnist.perturb import Deformation, Perturbation
+
+
+python -m deepscm.experiments.morphomnist.trainer -e SVIExperiment -m IndependentVISEM --data_dir /mnt/beta/sliao/DSCM_reproduce/deepscm/assets/data/morphomnist --default_root_dir /mnt/beta/sliao/DSCM_reproduce/deepscm/assets/models/morphomnist/SVIExperiment/IndependentVISEM/version_1/checkpoints --decoder_type fixed_var --gpus 4
+
+### run on sheire ####
+*****trainer *****
+python -m deepscm.experiments.medical.trainer -e SVIExperiment -m ConditionalVISEM --default_root_dir /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_sensitivity --downsample 4 --decoder_type fixed_var --train_batch_size 128 --gpus 0 --latent_dim 1024
+
+python -m deepscm.experiments.medical_mask_binary.trainer -e SVIExperiment -m ConditionalVISEM --default_root_dir /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_mask_binary --downsample 4 --decoder_type bernoulli --train_batch_size 128 --gpus 0 --latent_dim 128
+
+
+
+python -m deepscm.experiments.medical_more_features.trainer -e SVIExperiment -m ConditionalVISEM --default_root_dir /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_new --downsample  4 --decoder_type fixed_var --train_batch_size 32 --gpus 2
+
+*****tester *****
+完整的
+python -m deepscm.experiments.medical.tester -c /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model/SVIExperiment/ConditionalVISEM/version_41 --gpus 0 
+
+只有age_d
+python -m deepscm.experiments.medical.tester -c /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_sensitivity/SVIExperiment/ConditionalVISEM/version_0 --gpus 0 
+
+只有sex_d
+python -m deepscm.experiments.medical.tester -c /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_sensitivity/SVIExperiment/ConditionalVISEM/version_1 --gpus 6 
+只有sex_age
+
+python -m deepscm.experiments.medical.tester -c /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model_sensitivity/SVIExperiment/ConditionalVISEM/version_2 --gpus 0
+
+### run on local deskptop ###
+*****trainer*****
+python -m deepscm.experiments.medical.trainer -e SVIExperiment -m ConditionalVISEM --default_root_dir C:\Users\shiqi\PycharmProjects\DSCM_fundus\deepscm\assets\model --downsample  4 --decoder_type fixed_var --train_batch_size 64 --gpus 0 
+*****tester*****
+python -m deepscm.experiments.medical.tester -c C:\Users\shiqi\PycharmProjects\DSCM_fundus\deepscm\assets\model\SVIExperiment\ConditionalVISEM\version_41 --gpus 0 
+
+### load the log ###
+
+tensorboard --logdir='C:\Users\shiqi\PycharmProjects\DSCM_fundus\deepscm\assets\model_mask_binary\SVIExperiment\ConditionalVISEM\version_11'
+
+
+tensorboard --logdir='C:\Users\shiqi\PycharmProjects\DSCM_fundus\deepscm\assets\model\SVIExperiment\ConditionalVISEM\version_0\events.out.tfevents.1664749469.shire.2202494.0'
+
+
+python -m deepscm.experiments.medical.trainer -e SVIExperiment -m ConditionalVISEM --default_root_dir /mnt/beta/sliao/DSCM_fundus/deepscm/assets/model --downsample  4 --decoder_type sharedvar_lowrank_multivariate_gaussian --train_batch_size 128 --gpus 7
+
+tensorboard --logdir='C:\Users\shiqi\PycharmProjects\DSCM_fundus\deepscm\assets\model_sensitivity\SVIExperiment\ConditionalVISEM\version_2'
+
+
+

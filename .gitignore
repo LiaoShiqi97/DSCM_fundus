@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+venv/
+assets/data/fundus/image_mask_test/
+assets/data/fundus/test_norm_image/
+assets/data/fundus/test2_image/
+Documents/external_document_Confidential/
+Documents/progress_document/
+Documents/final_document/paper_read/

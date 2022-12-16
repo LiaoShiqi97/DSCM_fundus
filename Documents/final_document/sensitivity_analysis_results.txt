@@ -1,0 +1,52 @@
+-----whole:
+{'test/log p(T2D)': tensor(-0.6901),
+ 'test/log p(age)': tensor(-3.5661),
+ 'test/log p(sex)': tensor(-0.6938),
+ 'test/log p(x)': tensor(-167024.9531),
+ 'test/log p(z) - log q(z)': tensor(-4837.8052),
+ 'test/loss': 10967547.338015292,
+ 'test/p(z)': tensor(-5668.9414),
+ 'test/q(z)': tensor(-831.1367)}
+
+2.589776
+
+
+
+-----age_d
+{'test/log p(T2D)': tensor(-0.7108),
+ 'test/log p(age)': tensor(-3.5404),
+ 'test/log p(sex)': tensor(-0.6925),
+ 'test/log p(x)': tensor(-167678.0469),
+ 'test/log p(z) - log q(z)': tensor(-1828.5369),
+ 'test/loss': 10821158.489164311,
+ 'test/p(z)': tensor(-1515.6453),
+ 'test/q(z)': tensor(312.8916)}
+
+2.48703
+
+
+-----sex_d
+
+{'test/log p(T2D)': tensor(-0.6866),
+ 'test/log p(age)': tensor(-3.5371),
+ 'test/log p(sex)': tensor(-0.6938),
+ 'test/log p(x)': tensor(-171183.1406),
+ 'test/log p(z) - log q(z)': tensor(-1833.8185),
+ 'test/loss': 11043429.773562167,
+ 'test/p(z)': tensor(-1530.3837),
+ 'test/q(z)': tensor(303.4349)}
+
+2.7533128
+
+-----sex_age
+
+{'test/log p(T2D)': tensor(-0.7260),
+ 'test/log p(age)': tensor(-3.5258),
+ 'test/log p(sex)': tensor(-0.6938),
+ 'test/log p(x)': tensor(-167074.7969),
+ 'test/log p(z) - log q(z)': tensor(-1792.4375),
+ 'test/loss': 10779519.442330867,
+ 'test/p(z)': tensor(-1506.3059),
+ 'test/q(z)': tensor(286.1312)}
+
+2.5593693

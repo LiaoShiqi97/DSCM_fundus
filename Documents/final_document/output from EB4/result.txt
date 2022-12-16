@@ -1,0 +1,144 @@
+check whether test2 and its matching normal daibetes metabsis have the similar fundus images 
+
+--------------analyse data characteristics----------------------
+----Analysis  training set
+nr_individuals 3400
+normal blood glucose 2128
+IFG 137
+IGT 426
+T2D 709
+Male:  1650
+Female:  1750
+Mean age:  59.490882873535156
+Mean waist:  94.35322570800781
+Hypertension:  1767
+No hypertension:  1629
+Hypertension - missing:  4
+Current Smoker:  429
+Former Smoker:  1643
+Non Smoker:  1307
+Smoker - missing:  21
+Total images:  24484
+Left:  12431
+Right:  12053
+OD:  7619
+macula:  8237
+periphery:  4535
+other:  4093
+----Analysis  validation set
+nr_individuals 503
+normal blood glucose 296
+IFG 22
+IGT 66
+T2D 119
+Male:  263
+Female:  240
+Mean age:  59.3061637878418
+Mean waist:  94.33003997802734
+Hypertension:  254
+No hypertension:  246
+Hypertension - missing:  3
+Current Smoker:  67
+Former Smoker:  258
+Non Smoker:  171
+Smoker - missing:  7
+Total images:  3694
+Left:  1869
+Right:  1825
+OD:  1099
+macula:  1240
+periphery:  670
+other:  685
+----Analysis  test set
+nr_individuals 2000
+normal blood glucose 1285
+IFG 65
+IGT 251
+T2D 399
+Male:  969
+Female:  1031
+Mean age:  59.26499938964844
+Mean waist:  94.30724334716797
+Hypertension:  1049
+No hypertension:  951
+Hypertension - missing:  0
+Current Smoker:  250
+Former Smoker:  978
+Non Smoker:  759
+Smoker - missing:  13
+Total images:  14451
+Left:  7353
+Right:  7098
+OD:  4455
+macula:  4854
+periphery:  2652
+other:  2490
+----Analysis  test2 set
+nr_individuals 550
+normal blood glucose 275
+IFG 0
+IGT 0
+T2D 275
+Male:  334
+Female:  216
+Mean age:  63.39454650878906
+Mean waist:  102.70147705078125
+Hypertension:  368
+No hypertension:  182
+Hypertension - missing:  0
+Current Smoker:  60
+Former Smoker:  284
+Non Smoker:  202
+Smoker - missing:  4
+Total images:  3742
+Left:  1872
+Right:  1870
+OD:  1242
+macula:  1316
+periphery:  663
+other:  521
+
+--------------analyse AUC by fixation----------------------
+optic-disc AUC = 0.684 (0.665 - 0.702)
+macula AUC = 0.691 (0.673 - 0.710)
+periphery AUC = 0.694 (0.668 - 0.720)
+other AUC = 0.691 (0.667 - 0.715)
+optic-disc + macula AUC = 0.691 (0.674 - 0.701)
+periphery + other AUC = 0.691 (0.672 - 0.706)
+healthy vs prediabetes AUC = 0.608 (0.595 - 0.620)
+
+--------------analyse AUC predaibetes vs normal by features----------------------
+complete_labels['Waist'] = (labels[['waist']].values - 67) / (142-67)  # min-max: 67-142
+DL Model AUC = 0.632 (0.594 - 0.669)
+Age AUC = 0.655 (0.624 - 0.687)
+Sex AUC = 0.573 (0.541 - 0.605)
+Waist AUC = 0.703 (0.669 - 0.736)
+Smoking AUC = 0.551 (0.519 - 0.582)
+Hypertension AUC = 0.626 (0.597 - 0.655)
+Fam_history AUC = 0.526 (0.495 - 0.558)
+Age + Sex + Waist + Smoking + Hypertension + Fam_history AUC = 0.747 (0.716 - 0.779)
+Age + Sex AUC = 0.675 (0.642 - 0.708)
+Model + Age + Sex AUC = 0.679 (0.644 - 0.714)
+Age + Sex + Waist AUC = 0.738 (0.706 - 0.769)
+Model + Age + Sex + Waist AUC = 0.739 (0.708 - 0.769)
+Model + Age + Sex + Waist + Smoking + Hypertension + Fam_history AUC = 0.748 (0.715 - 0.780)
+
+
+
+--------------analyse AUC T2D vs normal by features----------------------
+DL Model AUC = 0.714 (0.685 - 0.743)
+Age AUC = 0.668 (0.638 - 0.698)
+Sex AUC = 0.603 (0.576 - 0.631)
+Waist AUC = 0.830 (0.808 - 0.853)
+Smoking AUC = 0.580 (0.551 - 0.608)
+Hypertension AUC = 0.720 (0.697 - 0.743)
+Fam_history AUC = 0.663 (0.633 - 0.692)
+Age + Sex + Waist + Smoking + Hypertension + Fam_history AUC = 0.886 (0.867 - 0.904)
+Age + Sex AUC = 0.696 (0.666 - 0.726)
+Model + Age + Sex AUC = 0.738 (0.710 - 0.767)
+Age + Sex + Waist AUC = 0.846 (0.824 - 0.868)
+Model + Age + Sex + Waist AUC = 0.861 (0.841 - 0.881)
+Model + Age + Sex + Waist + Smoking + Hypertension + Fam_history AUC = 0.895 (0.877 - 0.913)
+
+
+
