@@ -46,11 +46,11 @@ We make counterfactual inference on three different preprocessed fundus images.
 
 - On color fundus image, we find that aging causes fundus images to be slightly more yellow. This is the result of increasing pixel values on Red, Green channel and decreasing pixel values on Blue channel.
 
-![My Image](../deepscm/assets/data/fundus/figures_original_fundus_image/counterfactual_300.png)
+![My Image](../DSCM_fundus/assets/data/fundus/figures_original_fundus_image/counterfactual_300.png)
 
 - On normalized fundus images and vessel mask of fundus images, the custom DSCM is not expressive enough to make valid counterfactual inference. I provide the counterfactual inferred fundus images for reference.
-![My Image](../deepscm/assets/data/fundus/figures_contrast_normalized/contrast_cf_300.png)
-![My Image](../deepscm/assets/data/fundus/figures_vessel_mask/vessel_counterfactual_300.png)
+![My Image](../DSCM_fundus/assets/data/fundus/figures_contrast_normalized/contrast_cf_300.png)
+![My Image](../DSCM_fundus/assets/data/fundus/figures_vessel_mask/vessel_counterfactual_300.png)
 
 
 
